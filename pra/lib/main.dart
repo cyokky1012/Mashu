@@ -2,26 +2,38 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
+    MaterialApp(
       home: Scaffold(
         body: Center(
-          child: Row(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 '宮崎のおすすめスポット',
                 style: TextStyle(
-                  fontSize: 100,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: Colors.redAccent,
                 ),
               ),
-              SizedBox(width: 10),
-              Text(
-                '青島神社・高千穂峡・サンセ日南',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.grey,
+              SizedBox(height: 20),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Image.network(
+                  'https://picsum.photos/300/200',
+                  width: 300,
+                  height: 200,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              ElevatedButton(onPressed: () {}, child: Text('詳しく見る')),
+              SizedBox(height: 10),
+
+              Padding(
+                padding: EdgeInsets.all(16),
+                child: Text(
+                  '青島神社・高千穂峡・サンメッセ日南',
+                  style: TextStyle(fontSize: 16, color: Colors.grey),
                 ),
               ),
             ],
